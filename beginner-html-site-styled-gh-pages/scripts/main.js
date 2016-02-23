@@ -20,15 +20,18 @@ var myVariable = [1,'Bob','Steve',10];
 function enrich(params) {
     var defaultParams = {
     description: "",
+    list: ['TEX41\nSSX2IP\nPLSCR5\nSLC14A2\nITPR2\n'],
     popup: false
   };
 
+
+    
   if (typeof params.description == 'undefined')
     params.description = defaultParams.description;
   if (typeof params.popup == 'undefined')
     params.popup = defaultParams.popup;
   if (typeof params.list == 'undefined')
-    alert('No genes defined.');
+    params.list = defaultParams.list;
 
   var form = document.createElement('form');
   form.setAttribute('method', 'post');
@@ -54,20 +57,8 @@ function enrich(params) {
   document.body.removeChild(form);
 }
 
-var genes = [
-'TEX41',
-'SSX2IP',
-'PLSCR5',
-'SLC14A2',
-'DCN',
-'TPRG1',
-'BAALC',
-'TBCEL',
-'ZCCHC18',
-'C1orf53',
-'ITPR2'];
 
-var genes = ['TEX41\nSSX2IP\nPLSCR5\nSLC14A2\nITPR2\n'];// This worked!
+//var genes = ['TEX41\nSSX2IP\nPLSCR5\nSLC14A2\nITPR2\n'];// This worked!
 
 
 //var genes2 = ['TEX41\n','SSX2IP\n','PLSCR5\n','SLC14A2\n', 'ITPR2\n'];
@@ -80,5 +71,7 @@ var genes = ['TEX41\nSSX2IP\nPLSCR5\nSLC14A2\nITPR2\n'];// This worked!
 
 //enrich({list: genes, description: descString})   
 
-enrich({list: genes, popup: true})                                    
+//enrich({list: genes, popup: true})                           
+
+enrich({popup: true})                                    
    
