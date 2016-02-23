@@ -2,7 +2,6 @@
 shinyjs.enrich = function(params) {
     var defaultParams = {
     description: "",
-    list: ['TEX41\nSSX2IP\nPLSCR5\nSLC14A2\nITPR2\n'],
     popup: false
   };
 
@@ -13,7 +12,7 @@ shinyjs.enrich = function(params) {
   if (typeof params.popup == 'undefined')
     params.popup = defaultParams.popup;
   if (typeof params.list == 'undefined')
-    params.list = defaultParams.list;
+    alert('No genes defined.')
 
   var form = document.createElement('form');
   form.setAttribute('method', 'post');
