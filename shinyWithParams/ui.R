@@ -2,21 +2,11 @@ library(shiny)
 library(shinyjs)
 library(V8)
 
-jsCode <- '
-shinyjs.backgroundCol = function(params) {
-var defaultParams = {
-id : null,
-col : "red"
-};
-params = shinyjs.getParams(params, defaultParams);
-
-var el = $("#" + params.id);
-el.css("background-color", params.col);
-}'
+jsCode <- "scripts/functions_app.js"
 
   shinyUI = fluidPage(
     useShinyjs(),
-    extendShinyjs(text = jsCode),
+    extendShinyjs(script = jsCode, functions = "shinyjs.backgroundCol"),
     p(id = "name", "My name is Dean"),
     p(id = "sport", "I like soccer"),
     selectInput("col", "Colour:",
