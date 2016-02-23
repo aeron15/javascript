@@ -67,10 +67,10 @@ var genes = [
 'C1orf53',
 'ITPR2'];
 
-var genes2 = ['TEX41\nSSX2IP\nPLSCR5\nSLC14A2\nITPR2\n'];# This worked!
+var genes = ['TEX41\nSSX2IP\nPLSCR5\nSLC14A2\nITPR2\n'];// This worked!
 
 
-var genes2 = ['TEX41\n','SSX2IP\n','PLSCR5\n','SLC14A2\n', 'ITPR2\n'];
+//var genes2 = ['TEX41\n','SSX2IP\n','PLSCR5\n','SLC14A2\n', 'ITPR2\n'];
 
 
 //alert(genes[1]);
