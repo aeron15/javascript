@@ -1,41 +1,10 @@
-function enrich(params) {
-    var defaultParams = {
-    description: "",
-    popup: false
-  };
+shinyjs.backgroundCol = function(params) {
+	var defaultParams = {
+		id : null,
+		col : "red"
+	};
+	params = shinyjs.getParams(params, defaultParams);
 
-  if (typeof params.description == 'undefined')
-    params.description = defaultParams.description;
-  if (typeof params.popup == 'undefined')
-    params.popup = defaultParams.popup;
-  if (typeof params.list == 'undefined')
-    alert('No genes defined.');
-
-  var form = document.createElement('form');
-  form.setAttribute('method', 'post');
-  form.setAttribute('action', 'http://amp.pharm.mssm.edu/Enrichr/enrich');
-  if (params.popup)
-    form.setAttribute('target', '_blank');
-  form.setAttribute('enctype', 'multipart/form-data');
-
-  var listField = document.createElement('input');
-  listField.setAttribute('type', 'hidden');
-  listField.setAttribute('name', 'list');
-  listField.setAttribute('value', params.list);
-  form.appendChild(listField);
-
-  var descField = document.createElement('input');
-  descField.setAttribute('type', 'hidden');
-  descField.setAttribute('name', 'description');
-  descField.setAttribute('value', params.description);
-  form.appendChild(descField);
-
-  document.body.appendChild(form);
-  form.submit();
-  document.body.removeChild(form);
+	var el = $("#" + params.id);
+	el.css("background-color", params.col);
 }
-
-var genes = ['TEX41\nSSX2IP\nPLSCR5\nSLC14A2\nITPR2\n'];// This worked!
- 
-
-enrich({list: genes, popup: true}) 
