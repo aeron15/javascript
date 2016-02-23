@@ -1,6 +1,8 @@
 library(shiny)
-  
+library(shinyjs)
+
 shinyUI = fluidPage(
+    useShinyjs(),
     div(id = "myapp",
         h2("shinyjs demo"),
         textInput("name", "Name", ""),
@@ -9,4 +11,5 @@ shinyUI = fluidPage(
         p("Timestamp: ", span(date())),
         actionButton("submit", "Submit")
     )
+
 )
