@@ -1,5 +1,6 @@
-server = function(input, output) {
-  
+
+#server = function(input, output) {
+shinyServer( function(input, output) {  
   #observeEvent(input$btn, {
     #js$backgroundCol(input$selector, input$col)
   #})
@@ -8,4 +9,4 @@ server = function(input, output) {
     genes_2<-"TEX41\nSSX2IP\nPLSCR5\nSLC14A2\nITPR2\n"
     js$enrich(list=genes_2)
   })
-}
+})
